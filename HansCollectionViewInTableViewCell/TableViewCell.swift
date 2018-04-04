@@ -31,7 +31,7 @@ class TableViewCell: UITableViewCell,UICollectionViewDataSource {
         collectionView?.dataSource = self
         collectionView?.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView?.snp.makeConstraints({ (make) in
-            make.left.top.bottom.equalToSuperview()
+            make.left.right.top.bottom.equalToSuperview()
             make.width.equalTo(UIScreen.main.bounds.width)
         })
         collectionView?.isScrollEnabled = false

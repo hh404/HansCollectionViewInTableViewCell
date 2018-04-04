@@ -85,8 +85,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell :TableViewCell = (tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell)!
-        cell.setModel(dataArray1: dataArray[indexPath.row], reload: {
-            self.reloadView()
+        cell.setModel(dataArray1: dataArray[indexPath.row], reload: {[weak self] in
+            self?.reloadView()
         })
         return cell
     }
