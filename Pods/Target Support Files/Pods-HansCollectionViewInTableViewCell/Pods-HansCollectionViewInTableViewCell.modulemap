@@ -1,0 +1,6 @@
+framework module Pods_HansCollectionViewInTableViewCell {
+  umbrella header "Pods-HansCollectionViewInTableViewCell-umbrella.h"
+
+  export *
+  module * { export * }
+}
