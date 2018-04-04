@@ -6,6 +6,7 @@ target 'HansCollectionViewInTableViewCell' do
   use_frameworks!
 	pod 'SnapKit'
     pod  'SwiftRandom'
+    pod 'RandomColorSwift'
   # Pods for HansCollectionViewInTableViewCell
 
   target 'HansCollectionViewInTableViewCellTests' do

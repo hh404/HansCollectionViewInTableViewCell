@@ -21,10 +21,10 @@ class TableViewCell: UITableViewCell,UICollectionViewDataSource {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: 100, height: 100)
+        layout.estimatedItemSize = CGSize(width: 1, height: 1)
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.contentView.addSubview(collectionView!)
@@ -63,7 +63,7 @@ class TableViewCell: UITableViewCell,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell :CollectionViewCell = (self.collectionView?.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CollectionViewCell)!
-        cell.label.textColor = UIColor.blue
+        cell.label.textColor = UIColor.random()
         cell.label.text = dataArray?[indexPath.item]
         return cell
     }
@@ -81,7 +81,7 @@ class TableViewCell: UITableViewCell,UICollectionViewDataSource {
     
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        self.collectionView?.frame = CGRect(x: 0, y: 0, width: targetSize.width, height: 1000)
+        self.collectionView?.frame = CGRect(x: 0, y: 0, width: targetSize.width, height: 1)
         self.collectionView?.layoutIfNeeded()
         print("++++++++++++++++",collectionView)
         return (collectionView?.collectionViewLayout.collectionViewContentSize)!
